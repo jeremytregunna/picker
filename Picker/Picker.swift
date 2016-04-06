@@ -8,22 +8,22 @@
 
 import Foundation
 
-enum PickerError: ErrorType {
+public enum PickerError: ErrorType {
     case EmptyChoiceSet
 }
 
-protocol PickerRecordable {
+public protocol PickerRecordable {
     func pickerRecord(choice choice: Choice)
 }
 
-extension PickerRecordable {
+public extension PickerRecordable {
     func pickerRecord(choice choice: Choice) {}
 }
 
-struct Choice {
-    let name: String
-    var timesTried: UInt
-    var rewarded: UInt
+public struct Choice {
+    public let name: String
+    public var timesTried: UInt
+    public var rewarded: UInt
 }
 
 internal extension Array {
@@ -32,11 +32,11 @@ internal extension Array {
     }
 }
 
-class Picker {
+public class Picker {
     private var choices: [Choice]
     private let recorder: PickerRecordable?
 
-    init(choices: [String], recorder: PickerRecordable?) throws {
+    public init(choices: [String], recorder: PickerRecordable?) throws {
         guard choices.count > 0 else { throw PickerError.EmptyChoiceSet }
 
         self.recorder    = recorder
@@ -47,7 +47,7 @@ class Picker {
         }
     }
 
-    func choose() -> String {
+    public func choose() -> String {
         guard arc4random_uniform(100) > 10 else {
             let elemIndex      = Int(arc4random_uniform(UInt32(choices.count)))
             var choice         = choices[elemIndex]
@@ -73,7 +73,7 @@ class Picker {
         return highest.choice.name
     }
     
-    func chooseSpecific(choice: String) -> String {
+    public func chooseSpecific(choice: String) -> String {
         let index = choices.indexOf({ $0.name == choice })!
         var c = choices[index]
         c.timesTried += 1
@@ -81,7 +81,7 @@ class Picker {
         return choice
     }
 
-    func reward(choice: String) {
+    public func reward(choice: String) {
         let idx = choices.indexOf { return $0.name == choice }
         if let idx = idx {
             var c = choices[idx]
