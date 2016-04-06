@@ -10,6 +10,7 @@
 		4EC28E4F1CB5A583009D7C8B /* Picker.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EC28E4E1CB5A583009D7C8B /* Picker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EC28E561CB5A583009D7C8B /* Picker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC28E4B1CB5A583009D7C8B /* Picker.framework */; };
 		4EC28E5B1CB5A583009D7C8B /* PickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC28E5A1CB5A583009D7C8B /* PickerTests.swift */; };
+		4EC28E661CB5A5A1009D7C8B /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC28E651CB5A5A1009D7C8B /* Picker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		4EC28E551CB5A583009D7C8B /* PickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC28E5A1CB5A583009D7C8B /* PickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTests.swift; sourceTree = "<group>"; };
 		4EC28E5C1CB5A583009D7C8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EC28E651CB5A5A1009D7C8B /* Picker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				4EC28E4E1CB5A583009D7C8B /* Picker.h */,
+				4EC28E651CB5A5A1009D7C8B /* Picker.swift */,
 				4EC28E501CB5A583009D7C8B /* Info.plist */,
 			);
 			path = Picker;
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EC28E661CB5A5A1009D7C8B /* Picker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +314,7 @@
 		4EC28E601CB5A583009D7C8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -320,12 +325,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ca.tregunna.jeremy.libs.Picker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		4EC28E611CB5A583009D7C8B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

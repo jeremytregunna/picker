@@ -1,0 +1,8 @@
+---
+language: objective-c
+osx_image: xcode7.3
+script: xctool -project Picker.xcodeproj -scheme Picker -sdk iphonesimulator test
+branches:
+  only:
+  - master
+  - /^v.*$/
