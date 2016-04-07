@@ -13,10 +13,8 @@ You can use CocoaPods, or anything else you like. For CocoaPods, point at this
 repository.
 
 ```
-pod 'Picker', :git => 'https://github.com/jeremytregunna/picker.git"
+pod 'Picker', '~> 1.0.0'
 ```
-
-for now. This README will be updated when you can drop the git bit.
 
 ## Usage
 
