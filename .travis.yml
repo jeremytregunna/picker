@@ -5,4 +5,4 @@ script: xctool -project Picker.xcodeproj -scheme Picker -sdk iphonesimulator tes
 branches:
   only:
   - master
-  - /^v.*$/
+  - /^\d.*$/
