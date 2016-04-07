@@ -34,7 +34,7 @@ internal extension Array {
 
 public class Picker {
     private var choices: [Choice]
-    private let recorder: PickerRecordable?
+    private var recorder: PickerRecordable?
 
     public init(choices: [String], recorder: PickerRecordable?) throws {
         guard choices.count > 0 else { throw PickerError.EmptyChoiceSet }
@@ -45,6 +45,10 @@ public class Picker {
             let c = Choice(name: choice, timesTried: 1, rewarded: 1) // Avoid dividing by zero
             self.choices.append(c)
         }
+    }
+    
+    deinit {
+        self.recorder = nil
     }
 
     public func choose() -> String {

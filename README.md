@@ -51,8 +51,8 @@ let picker = Picker(["orange", "blue", "green"], recorder: yourRecorderInstance)
 ```
 
 The picker will take ownership of that instance, so you don't need to keep your
-own around. If you do however, you'll want to ensure that you break this cycle
-manually.
+own around. If you keep a reference to the picker on `yourRecorderInstance`,
+then you'll want to ensure you break the reference manually.
 
 ## License
 
