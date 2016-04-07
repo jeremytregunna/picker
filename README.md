@@ -1,5 +1,7 @@
 # Picker
 
+![Travis CI](https://travis-ci.org/jeremytregunna/picker.svg?branch=master "Travis CI")
+
 Picker is a different kind of A/B testing library. It doesn't feature a fancy
 algorithm, it's not limited to just a small handfull of choices. It also doesn't
 require constant tuning. What good is it then? Well, it's a library you can set
