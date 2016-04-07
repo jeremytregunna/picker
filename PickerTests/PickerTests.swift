@@ -59,8 +59,8 @@ class PickerTests: XCTestCase {
             let exp = expectationWithDescription("called")
             let recorder = PickerRecorder(runner: { choice in
                 XCTAssertEqual(choice.name, "foo")
-                XCTAssert(choice.timesTried == 2)
-                XCTAssert(choice.rewarded == 1)
+                XCTAssert(choice.timesTried == 1)
+                XCTAssert(choice.rewarded == 0)
                 exp.fulfill()
             })
 
@@ -78,7 +78,7 @@ class PickerTests: XCTestCase {
         let choices = ["foo", "bar"]
         do {
             let picker = try Picker(choices: choices, recorder: nil)
-            var test: [String: Int] = ["foo": 1, "bar": 1]
+            var test: [String: Int] = ["foo": 0, "bar": 0]
             // These two to set up the initial reward of bar, we want to artificially favour bar for testing purposes.
             picker.chooseSpecific("bar")
             picker.reward("bar")

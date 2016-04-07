@@ -42,7 +42,7 @@ public class Picker {
         self.recorder    = recorder
         self.choices     = [Choice]()
         for choice in choices {
-            let c = Choice(name: choice, timesTried: 1, rewarded: 1) // Avoid dividing by zero
+            let c = Choice(name: choice, timesTried: 0, rewarded: 0)
             self.choices.append(c)
         }
     }
