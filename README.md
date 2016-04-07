@@ -15,7 +15,7 @@ You can use CocoaPods, or anything else you like. For CocoaPods, point at this
 repository.
 
 ```
-pod 'Picker', '~> 1.0.0'
+pod 'Picker'
 ```
 
 ## Usage
