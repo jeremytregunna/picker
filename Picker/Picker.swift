@@ -84,12 +84,16 @@ public class Picker {
         choices[index] = c
         return choice
     }
-
+    
     public func reward(choice: String) {
+        return reward(choice, amount: 1)
+    }
+
+    public func reward(choice: String, amount: UInt) {
         let idx = choices.indexOf { return $0.name == choice }
         if let idx = idx {
             var c = choices[idx]
-            c.rewarded += 1
+            c.rewarded += amount
             choices[idx] = c
         }
     }
